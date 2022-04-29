@@ -1,7 +1,7 @@
 ﻿using Scrips.Cartridge;
 using UnityEngine;
 
-namespace Scrips
+namespace Scrips.Actions
 {
     public interface ICreatorCartridge
     {

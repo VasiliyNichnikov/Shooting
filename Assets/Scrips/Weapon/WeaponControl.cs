@@ -1,9 +1,10 @@
+using Scrips.Actions;
 using Scrips.Cartridge;
 using UnityEngine;
 
 namespace Scrips.Weapon
 {
-    public class WeaponAction : MonoBehaviour
+    public class WeaponControl : MonoBehaviour
     {
         [SerializeField] private GameObject _prefab;
         [SerializeField] private Transform _parent;
@@ -28,11 +29,12 @@ namespace Scrips.Weapon
         {
             CalculatorDirection calculatorDirection = new CalculatorDirection(_thisTransform, _spawnCartridge);
             Vector3 direction = calculatorDirection.GetDirection();
-            IMovement movement = new CalculatorMovement(direction, _speed);
+            
+            IMovement movement = new CalculatorMovementByDirection(direction, _speed);
             ICreatorCartridge creator = new CreatorDefaultCartridge(_prefab, _parent);
 
             Shooting shooting = new Shooting(movement, creator);
-            shooting.ToRun(_spawnCartridge.position);
+            shooting.Shoot(_spawnCartridge.position);
         }
     }
 }

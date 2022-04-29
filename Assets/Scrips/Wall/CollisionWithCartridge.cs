@@ -6,10 +6,8 @@ namespace Scrips.Wall
     {
         private void OnCollisionExit(Collision other)
         {
-            if (Utilities.CheckCartridge(other.gameObject))
-            {
-                Destroy(other.collider.gameObject);
-            }
+            var cartridge = Utilities.GetCartridge(other.gameObject);
+            cartridge?.DestroyYourself();
         }
     }
 }

@@ -1,3 +1,4 @@
+using Scrips.Actions;
 using Scrips.Cartridge;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace Scrips.Weapon
             _creator = creator;
         }
 
-        public void ToRun(Vector3 position)
+        public void Shoot(Vector3 position)
         {
             ICartridge cartridge = _creator.Create(position);
             cartridge.ToRun(_movement);

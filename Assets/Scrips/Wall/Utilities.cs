@@ -5,9 +5,9 @@ namespace Scrips.Wall
 {
     public static class Utilities
     {
-        public static bool CheckCartridge(GameObject obj)
+        public static ICartridge GetCartridge(GameObject obj)
         {
-            return obj.GetComponent<ICartridge>() != null;
+            return obj.GetComponent<ICartridge>();
         }
     }
 }

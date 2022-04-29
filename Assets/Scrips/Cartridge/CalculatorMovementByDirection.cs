@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Scrips.Cartridge
 {
-    public class CalculatorMovement: IMovement
+    public class CalculatorMovementByDirection: IMovement
     {
         private readonly Vector3 _direction;
         private readonly float _speed;
         
-        public CalculatorMovement(Vector3 direction, float speed)
+        public CalculatorMovementByDirection(Vector3 direction, float speed)
         {
             _direction = direction;
             _speed = speed;
